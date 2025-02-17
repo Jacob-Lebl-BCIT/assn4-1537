@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  /* overflow: hidden; */
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+  background: #fff;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Grid container for main content */
+.grid-container {
+  display: grid;
+  margin: 0 auto;
+  max-width: 1281px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+    "sidebar grid-header"
+    "sidebar grid-aside"
+    "sidebar content"
+    "sidebar content"
+    "footer footer";
+  gap: 5pt;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  min-width: 10pc;
+  padding: 8pt;
+  border-radius: 8pt;
+  background-color: red;
+}
+
+.sidebar img {
+  max-width: 100%;
+  border-radius: 50%;
+  /* Restrict the width of the image */
+}
+
+/* Sidebar Styles */
+.sidebar-container {
+  display: grid;
+  gap: 8pt;
+}
+
+/* Sidebar item */
+
+.sidebar-item {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  padding: 8pt;
+  border-radius: 8pt;
+  overflow: hidden;
+  color: white;
+  background-color: blue;
+}
+
+.grid-header {
+  padding: 8pt;
+  border-radius: 8pt;
+  background-color: red;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 8pt;
+  border-radius: 8pt;
+  gap: 8pt;
+  background-color: blue;
+}
+
+
+
+.grid-aside {
+  display: flex;
+  gap: 4pt;
+  border-radius: 8pt;
+}
+
+.grid-aside button {
+  flex: auto;
+  background-color: white;
+  border: 2px solid #0066cc;
+  border-radius: 8px;
+  padding: 5pt;
+  color: #0066cc;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.content-item {
+  padding: 8pt;
+  border-radius: 8pt;
+  background-color: green;
+  display: grid;
+}
+
+/* Footer styles */
+footer {
+  grid-area: footer;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 8pt;
+  margin-top: 18pt;
+}
+
+
+.header-image-container {
+  position: relative;
+  display: flex;
+}
+
+
+.caption {
+  position: absolute;
+  bottom: 2pc;
+  text-align: left;
+  max-width: 30pc;
+
+
+}
+
+.caption-top {
+  position: relative;
+  background-color: grey;
+  padding: 5pt;
+  max-width: 20pc;
+  width: fit-content;
+
+
+}
+
+.caption-bottom {
+  position: relative;
+  background-color: white;
+  padding: 5pt;
+  width: fit-content;
+
+}
+
+/* Media queries */
+
+/* 700 pixels wide and under */
+@media (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "grid-header"
+      "content"
+      "grid-aside"
+      "footer";
+  }
+
+  .sidebar {
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    flex: fill;
+    align-items: center;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .sidebar-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10pt; /* Add gap between sidebar items */
+    padding: 0;
+  }
+
+  .sidebar-item {
+    font-size: 1rem;
+    flex: auto;
+    text-align: center;
+    /* width: 100%; */
+    height: 35pt; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+
+  .content-item {
+    max-width: 30pc;
+    margin: 0 auto;
+  }
+
+  .grid-header {
+    padding: 0;
+  }
+
+.caption {
+  bottom: 1pc;
+  left: 0;
+  max-width: 30pc;
+
+}
+
+  .grid-aside {
+    display: none;
+  }
+
+}
+
+/* 701 to 1280 pixels wide range */
+@media (min-width: 701px) and (max-width: 1280px) {
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "grid-header"
+      "grid-aside"
+      "content"
+      "footer";
+  }
+
+  .grid-header {
+    margin: auto 5pc;
+    border-radius: 8pt;
+  }
+
+  .sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+    padding: 8pt;
+    margin: 1pc;
+  }
+
+  .sidebar-container {
+    gap: 1pc;
+  }
+
+  .logo-container {
+    flex: 0 0 auto;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .sidebar-container {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2pc;
+  }
+
+}
