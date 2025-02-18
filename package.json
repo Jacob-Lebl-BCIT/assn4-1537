@@ -15,6 +15,14 @@
   "type": "commonjs",
   "main": "assignment4.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "Start": "node assignment4.js",
+    "devStart": "nodemon assignment4.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
   }
 }
