@@ -16,8 +16,6 @@ app.use("/img", express.static("./public/img"));
 app.get("/", (req, res) => {
     let doc = fs.readFileSync("public/index.html", "utf8");
     res.send(doc);
-    doc = fs.readFileSync("public/js/client.js");
-    res.send(doc);
 })
 
 app.get("/maw", (req, res) => {
