@@ -8,10 +8,15 @@ app.use(express.json());
 const fs = require("fs");
 
 // Proxy paths
-app.use("/", express.static("public"));
+// app.use("/", express.static("public"));
+app.use("/js", express.static("./public/js"));
+app.use("/css", express.static("./public/css"));
+app.use("/img", express.static("./public/img"));
 
 app.get("/", (req, res) => {
-    let doc = fs.readFileSync("app/index.html", "utf8");
+    let doc = fs.readFileSync("public/index.html", "utf8");
+    res.send(doc);
+    doc = fs.readFileSync("public/js/client.js");
     res.send(doc);
 })
 
@@ -20,6 +25,7 @@ app.get("/maw", (req, res) => {
 
     res.send('<html><head></head> <body> <img src="/img/maw.jpg"></body></html>');
 })
+
 
 
 app.listen(8000);

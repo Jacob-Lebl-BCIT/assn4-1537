@@ -22,6 +22,21 @@ body {
   overflow: hidden;
 }
 
+.logo-container {
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  aspect-ratio:1/1;
+  margin-bottom: 5pt;
+
+}
+
+.logo-container img {
+  object-fit: fit;
+}
+
+
 /* Main content styles */
 main {
   padding: 20px;
@@ -30,6 +45,7 @@ main {
 
 img {
   width: 100%;
+  
   border-radius: 8px;
 }
 
